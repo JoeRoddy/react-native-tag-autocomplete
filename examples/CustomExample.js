@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-native';
-import AutoTags from './index.js';
+import AutoTags from 'react-native-tag-autocomplete';
 
 const contacts = [
     {

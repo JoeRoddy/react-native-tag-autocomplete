@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import AutoTags from './index.js';
+import AutoTags from 'react-native-tag-autocomplete';
 
-export default class App extends React.Component {
+export default class Example extends React.Component {
   state = {
     tagsSelected: [],
     suggestions: [{ name: "mrjoeroddy@gmail.com" }, { name: "janedoe@aol.com" },
