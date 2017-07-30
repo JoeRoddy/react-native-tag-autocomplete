@@ -26,8 +26,8 @@ handleDelete = index => {
    this.setState({ tagsSelected });
 }
 
-handleAddition = contact => {
-   this.setState({ tagsSelected: this.state.tagsSelected.concat([contact]) });
+handleAddition = suggestion => {
+   this.setState({ tagsSelected: this.state.tagsSelected.concat([suggestion]) });
 }
 
 render() {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
 ### Props
 | Prop | Type | Required | Description |
 | :------------ |:---------------:|:------:| :-----|
-| suggestions | array |yes| Obj array of suggestions, they must have a name prop if not overriding filter && renderTags |
+| suggestions | array |yes| Array of suggestion objects. They must have a 'name' prop if not overriding filter && renderTags |
 | tagsSelected | array |yes| List of tags that have already been selected
 | handleAddition | function|yes | Handler for when suggestion is selected (normally just push to tagsSelected) |
 | handleDelete | function |yes| Handler called with index when tag is clicked |
