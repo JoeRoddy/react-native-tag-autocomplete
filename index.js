@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, TouchableHighlight } from 'react-native';
+import Autocomplete from 'react-native-autocomplete-input';
 
 export default class AutoTags extends Component {
     state = {
