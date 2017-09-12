@@ -15,9 +15,9 @@ $ npm install --save react-native-tag-autocomplete
 //...
 import AutoTags from 'react-native-tag-autocomplete';
 // ...
-this.state = {
-    suggestions = [ {name:'Mickey Mouse'}, ],
-    tagsSelected = []
+state = {
+    suggestions : [ {name:'Mickey Mouse'}, ],
+    tagsSelected : []
 }
 
 handleDelete = index => {

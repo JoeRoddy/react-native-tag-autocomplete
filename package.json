@@ -1,6 +1,6 @@
 {
   "name": "react-native-tag-autocomplete",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Autocompleting tag list for react native.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,9 @@
     "react": "16.0.0-alpha.12",
     "react-native": "^0.46.1"
   },
+  "dependencies": {
+    "react-native-autocomplete-input": "^3.3.1"    
+  },
   "peerDependencies": {
-    "react-native-autocomplete-input": "^3.3.1"
   }
 }
