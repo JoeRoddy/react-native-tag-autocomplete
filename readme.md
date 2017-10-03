@@ -1,7 +1,7 @@
 # react-native-tag-autocomplete
 Tag autocomplete component for contacts, groups, etc.
 
-![Example](tag.gif)
+![Example](https://raw.githubusercontent.com/JoeRoddy/react-native-tag-autocomplete/master/tag.gif)
 
 ### Up and Running
 
