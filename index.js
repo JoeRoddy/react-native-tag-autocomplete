@@ -88,6 +88,7 @@ export default class AutoTags extends Component {
                         styles.containerStyle}
                     underlineColorAndroid='transparent'
                     style={{ backgroundColor: '#efeaea' }}
+                    {...this.props}
                 />
             </View>
         )
