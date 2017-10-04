@@ -67,7 +67,7 @@ export default class AutoTags extends Component {
 
         return (
             <View style={styles.AutoTags}>
-                {this.props.tagsSelected &&
+                {!this.props.orientedBelow && this.props.tagsSelected &&
                     this.renderTags()}
                 <Autocomplete
                     data={data}
@@ -91,6 +91,8 @@ export default class AutoTags extends Component {
                     style={{ backgroundColor: '#efeaea' }}
                     {...this.props}
                 />
+                {this.props.orientedBelow && this.props.tagsSelected &&
+                    this.renderTags()}
             </View>
         )
     }
