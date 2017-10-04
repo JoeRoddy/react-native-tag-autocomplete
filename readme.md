@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 | placeholder | string |no| Input placeholder  |
 | renderTags | function |no| Override the render tags and it's styles|
 | renderSuggestion | function |no| Override the suggestions dropdown items |
-| filterData | function |no| Override the search function, allows you to filter by props other than name  |
+| filterData | function |no| Override the search function, allows you to filter by props other than name  | tagStyles | object | no | Override the default tag styling
 
 ## Pull Requests
 I'm a dummy, so any PR's are wholly appreciated <3.
