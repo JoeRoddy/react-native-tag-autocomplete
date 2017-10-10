@@ -1,6 +1,10 @@
 {
   "name": "react-native-tag-autocomplete",
+<<<<<<< HEAD
   "version": "1.0.15",
+=======
+  "version": "1.0.18",
+>>>>>>> dacc35541f8fd75639fd128c023e151087375e85
   "description": "Autocompleting tag list for react native.",
   "main": "index.js",
   "scripts": {
