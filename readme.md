@@ -1,7 +1,7 @@
 # react-native-tag-autocomplete
 Tag autocomplete component for contacts, groups, etc.
 
-![Example](tag.gif)
+![Example](https://raw.githubusercontent.com/JoeRoddy/react-native-tag-autocomplete/master/tag.gif)
 
 ### Up and Running
 
@@ -91,7 +91,9 @@ const styles = StyleSheet.create({
 | placeholder | string |no| Input placeholder  |
 | renderTags | function |no| Override the render tags and it's styles|
 | renderSuggestion | function |no| Override the suggestions dropdown items |
-| filterData | function |no| Override the search function, allows you to filter by props other than name  |
+| filterData | function |no| Override the search function, allows you to filter by props other than name  | 
+| tagStyles | object | no | Override the default tag styling | 
+| tagsOrientedBelow | boolean | no | Move tags below the input instead of above (default). | 
 
 ## Pull Requests
 I'm a dummy, so any PR's are wholly appreciated <3.
