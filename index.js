@@ -44,10 +44,26 @@ export default class AutoTags extends Component {
       //TODO: on ios, delete last tag on backspace event && empty query
       //(impossible on android atm, no listeners for empty backspace)
     }
+    if (this.props.onChangeText) return this.props.onChangeText(text);
+    if (
+      this.props.createTagOnSpace &&
+      this.props.onCustomTagCreated &&
+      text.length > 1 &&
+      text.charAt(text.length - 1) === " "
+    ) {
+      this.setState({ query: "" });
+      return this.props.onCustomTagCreated(text.trim());
+    } else if (this.props.createTagOnSpace && !this.props.onCustomTagCreated) {
+      console.error(
+        "When enabling createTagOnSpace, you must provide an onCustomTagCreated function"
+      );
+    }
 
-    this.props.onChangeText
-      ? this.props.onChangeText(text)
-      : this.setState({ query: text });
+    if (text.charAt(text.length - 1) === "\n") {
+      return; // prevent onSubmit bugs
+    }
+
+    this.setState({ query: text });
   };
 
   filterData = query => {
@@ -68,6 +84,12 @@ export default class AutoTags extends Component {
     return results;
   };
 
+  onSubmitEditing = () => {
+    if (!this.props.onCustomTagCreated) return;
+    const { query } = this.state;
+    this.setState({ query: "" }, () => this.props.onCustomTagCreated(query));
+  };
+
   addTag = tag => {
     this.props.handleAddition(tag);
     this.setState({ query: "" });
@@ -84,9 +106,12 @@ export default class AutoTags extends Component {
           this.renderTags()}
         <Autocomplete
           data={data}
+          controlled={true}
           placeholder={this.props.placeholder}
           defaultValue={query}
+          value={query}
           onChangeText={text => this.handleInput(text)}
+          onSubmitEditing={this.onSubmitEditing}
           multiline={true}
           autoFocus={this.props.autoFocus === false ? false : true}
           renderItem={suggestion => (
