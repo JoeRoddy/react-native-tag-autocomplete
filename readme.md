@@ -44,6 +44,23 @@ render() {
 // ...
 ```
 
+### Props
+
+| Prop               |   Type   | Required | Description                                                                                      |
+| :----------------- | :------: | :------: | :----------------------------------------------------------------------------------------------- |
+| suggestions        |  array   |   yes    | Array of suggestion objects. They must have a 'name' prop if not overriding filter && renderTags |
+| tagsSelected       |  array   |   yes    | List of tags that have already been selected                                                     |
+| handleAddition     | function |   yes    | Handler for when suggestion is selected (normally just push to tagsSelected)                     |
+| handleDelete       | function |   yes    | Handler called with index when tag is clicked                                                    |
+| placeholder        |  string  |    no    | Input placeholder                                                                                |
+| renderTags         | function |    no    | Override the render tags and it's styles                                                         |
+| renderSuggestion   | function |    no    | Override the suggestions dropdown items                                                          |
+| filterData         | function |    no    | Override the search function, allows you to filter by props other than name                      |
+| onCustomTagCreated | function |    no    | Function called with user input when user presses enter                                          |
+| createTagOnSpace   | boolean  |    no    | calls onCustomTagCreated when user presses space                                                 |
+| tagStyles          |  object  |    no    | Override the default tag styling                                                                 |
+| tagsOrientedBelow  | boolean  |    no    | Move tags below the input instead of above (default).                                            |
+
 ### Android
 
 This repository wraps [react-native-autocomplete-input](https://github.com/l-urence/react-native-autocomplete-input), so their limitations will also apply here.
@@ -63,8 +80,8 @@ render() {
       </View>
       <View>
         <Text>Some content</Text>
-      <View />
-    <View>
+      </View>
+    </View>
   );
 }
 
@@ -82,22 +99,6 @@ const styles = StyleSheet.create({
 });
 ```
 
-### Props
-
-| Prop               |   Type   | Required | Description                                                                                      |
-| :----------------- | :------: | :------: | :----------------------------------------------------------------------------------------------- |
-| suggestions        |  array   |   yes    | Array of suggestion objects. They must have a 'name' prop if not overriding filter && renderTags |
-| tagsSelected       |  array   |   yes    | List of tags that have already been selected                                                     |
-| handleAddition     | function |   yes    | Handler for when suggestion is selected (normally just push to tagsSelected)                     |
-| handleDelete       | function |   yes    | Handler called with index when tag is clicked                                                    |
-| placeholder        |  string  |    no    | Input placeholder                                                                                |
-| renderTags         | function |    no    | Override the render tags and it's styles                                                         |
-| renderSuggestion   | function |    no    | Override the suggestions dropdown items                                                          |
-| filterData         | function |    no    | Override the search function, allows you to filter by props other than name                      |
-| onCustomTagCreated | function |    no    | Function called with user input when user presses enter                                          |
-| createTagOnSpace   | boolean  |    no    | calls onCustomTagCreated when user presses space                                                 |
-| tagStyles          |  object  |    no    | Override the default tag styling                                                                 |
-| tagsOrientedBelow  | boolean  |    no    | Move tags below the input instead of above (default).                                            |
 
 ## Pull Requests
 
