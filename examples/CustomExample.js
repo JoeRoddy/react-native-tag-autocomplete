@@ -90,7 +90,6 @@ export default class CustomExample extends React.Component {
 
   onCustomTagCreated = userInput => {
     //user pressed enter, create a new tag from their input
-    if (userInput.trim() === "") return;
     const contact = {
       email: userInput,
       fullName: null

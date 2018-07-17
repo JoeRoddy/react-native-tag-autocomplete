@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import {
-  View,
   StyleSheet,
   Text,
+  TouchableHighlight,
   TouchableOpacity,
-  TouchableHighlight
+  View
 } from "react-native";
 import Autocomplete from "react-native-autocomplete-input";
 
@@ -40,6 +40,7 @@ export default class AutoTags extends Component {
   };
 
   handleInput = text => {
+    if (this.submitting) return;
     if (this.props.allowBackspace) {
       //TODO: on ios, delete last tag on backspace event && empty query
       //(impossible on android atm, no listeners for empty backspace)
@@ -85,9 +86,16 @@ export default class AutoTags extends Component {
   };
 
   onSubmitEditing = () => {
-    if (!this.props.onCustomTagCreated) return;
     const { query } = this.state;
+    if (!this.props.onCustomTagCreated || query.trim() === "") return;
     this.setState({ query: "" }, () => this.props.onCustomTagCreated(query));
+
+    // prevents an issue where handleInput() will overwrite
+    // the query clear in some circumstances
+    this.submitting = true;
+    setTimeout(() => {
+      this.submitting = false;
+    }, 30);
   };
 
   addTag = tag => {
