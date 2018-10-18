@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
 
 ## Pull Requests
 
-I'm a dummy, so any PR's are wholly appreciated <3.
+I'm a dummy, so any PR's are wholly appreciated <3<3<3.
