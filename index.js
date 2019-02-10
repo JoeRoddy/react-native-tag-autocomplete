@@ -61,7 +61,13 @@ export default class AutoTags extends Component {
     }
 
     if (text.charAt(text.length - 1) === "\n") {
-      return; // prevent onSubmit bugs
+      if (this.props.onCustomTagCreated) {
+        this.setState({ query: "" });
+        return this.props.onCustomTagCreated(text.trim());
+      } else {
+        return; // prevent onSubmit bugs
+      }
+      
     }
 
     this.setState({ query: text });
@@ -85,19 +91,6 @@ export default class AutoTags extends Component {
     return results;
   };
 
-  onSubmitEditing = () => {
-    const { query } = this.state;
-    if (!this.props.onCustomTagCreated || query.trim() === "") return;
-    this.setState({ query: "" }, () => this.props.onCustomTagCreated(query));
-
-    // prevents an issue where handleInput() will overwrite
-    // the query clear in some circumstances
-    this.submitting = true;
-    setTimeout(() => {
-      this.submitting = false;
-    }, 30);
-  };
-
   addTag = tag => {
     this.props.handleAddition(tag);
     this.setState({ query: "" });
@@ -119,7 +112,6 @@ export default class AutoTags extends Component {
           defaultValue={query}
           value={query}
           onChangeText={text => this.handleInput(text)}
-          onSubmitEditing={this.onSubmitEditing}
           multiline={true}
           autoFocus={this.props.autoFocus === false ? false : true}
           renderItem={suggestion => (
