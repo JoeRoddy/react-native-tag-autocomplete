@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
-  TouchableHighlight,
   TouchableOpacity,
   View
 } from "react-native";
@@ -26,13 +25,13 @@ export default class AutoTags extends Component {
       <View style={this.props.tagStyles || styles.tags}>
         {this.props.tagsSelected.map((t, i) => {
           return (
-            <TouchableHighlight
+            <TouchableOpacity
               key={i}
               style={[tagMargins, styles.tag]}
               onPress={() => this.props.handleDelete(i)}
             >
               <Text>{t.name}</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
           );
         })}
       </View>
@@ -121,6 +120,7 @@ export default class AutoTags extends Component {
           onChangeText={text => this.handleInput(text)}
           onSubmitEditing={this.onSubmitEditing}
           multiline={true}
+          listStyle={styles.listStyle}
           autoFocus={this.props.autoFocus === false ? false : true}
           renderItem={suggestion => (
             <TouchableOpacity onPress={e => this.addTag(suggestion)}>
@@ -187,5 +187,11 @@ const styles = StyleSheet.create({
   containerStyle: {
     minWidth: 200,
     width: '100%'
+  },
+  listStyle: {
+    flex: 1,
+    paddingHorizontal: 0,
+    marginHorizontal: 0,
+    backgroundColor: "#fff"
   }
 });
