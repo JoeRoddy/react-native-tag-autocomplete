@@ -162,6 +162,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     alignItems: "flex-start",
+    justifyContent: 'center',
     backgroundColor: "#efeaea",
     width: '100%'
   },
