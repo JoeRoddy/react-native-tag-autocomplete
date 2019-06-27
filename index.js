@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     alignItems: "flex-start",
     backgroundColor: "#efeaea",
-    width: 300
+    width: '100%'
   },
   tag: {
     backgroundColor: "rgb(244, 244, 244)",
@@ -186,6 +186,6 @@ const styles = StyleSheet.create({
   },
   containerStyle: {
     minWidth: 200,
-    maxWidth: 300
+    width: '100%'
   }
 });
