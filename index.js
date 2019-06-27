@@ -123,7 +123,7 @@ export default class AutoTags extends Component {
           listStyle={styles.listStyle}
           autoFocus={this.props.autoFocus === false ? false : true}
           renderItem={suggestion => (
-            <TouchableOpacity onPress={e => this.addTag(suggestion)}>
+            <TouchableOpacity onPress={e => this.addTag(suggestion)} style={styles.itemContainer}>
               {this.props.renderSuggestion ? (
                 this.props.renderSuggestion(suggestion)
               ) : (
@@ -193,5 +193,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 0,
     marginHorizontal: 0,
     backgroundColor: "#fff"
-  }
+  },
+  itemContainer: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: '#ccc',
+    padding: 8,
+    position: 'relative',
+    backgroundColor: "#ffff",
+  },
 });
