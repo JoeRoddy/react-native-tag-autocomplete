@@ -139,7 +139,7 @@ export default class AutoTags extends Component {
           style={{ backgroundColor: "#efeaea" }}
           listContainerStyle={{
             backgroundColor: this.props.tagsOrientedBelow
-              ? "#efeaea"
+              ? "#EEEFF0"
               : "transparent"
           }}
           {...this.props}
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     alignItems: "flex-start",
     justifyContent: 'center',
-    backgroundColor: "#efeaea",
+    backgroundColor: "#EEEFF0",
     width: '100%'
   },
   tag: {
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderColor: "transparent",
     alignItems: "stretch",
-    backgroundColor: "#efeaea"
+    backgroundColor: "#EEEFF0"
   },
   containerStyle: {
     minWidth: 200,
