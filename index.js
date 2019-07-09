@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
-  TouchableHighlight,
   TouchableOpacity,
   View
 } from "react-native";
@@ -26,13 +25,13 @@ export default class AutoTags extends Component {
       <View style={this.props.tagStyles || styles.tags}>
         {this.props.tagsSelected.map((t, i) => {
           return (
-            <TouchableHighlight
+            <TouchableOpacity
               key={i}
               style={[tagMargins, styles.tag]}
               onPress={() => this.props.handleDelete(i)}
             >
               <Text>{t.name}</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
           );
         })}
       </View>
@@ -121,9 +120,10 @@ export default class AutoTags extends Component {
           onChangeText={text => this.handleInput(text)}
           onSubmitEditing={this.onSubmitEditing}
           multiline={true}
+          listStyle={styles.listStyle}
           autoFocus={this.props.autoFocus === false ? false : true}
           renderItem={suggestion => (
-            <TouchableOpacity onPress={e => this.addTag(suggestion)}>
+            <TouchableOpacity onPress={e => this.addTag(suggestion)} style={styles.itemContainer}>
               {this.props.renderSuggestion ? (
                 this.props.renderSuggestion(suggestion)
               ) : (
@@ -139,7 +139,7 @@ export default class AutoTags extends Component {
           style={{ backgroundColor: "#efeaea" }}
           listContainerStyle={{
             backgroundColor: this.props.tagsOrientedBelow
-              ? "#efeaea"
+              ? "#EEEFF0"
               : "transparent"
           }}
           {...this.props}
@@ -162,8 +162,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     alignItems: "flex-start",
-    backgroundColor: "#efeaea",
-    width: 300
+    justifyContent: 'center',
+    backgroundColor: "#EEEFF0",
+    width: '100%'
   },
   tag: {
     backgroundColor: "rgb(244, 244, 244)",
@@ -178,14 +179,27 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     paddingLeft: 5,
     height: 40,
-    width: 300,
+    width: '100%',
     justifyContent: "center",
     borderColor: "transparent",
     alignItems: "stretch",
-    backgroundColor: "#efeaea"
+    backgroundColor: "#EEEFF0"
   },
   containerStyle: {
     minWidth: 200,
-    maxWidth: 300
-  }
+    width: '100%'
+  },
+  listStyle: {
+    flex: 1,
+    paddingHorizontal: 0,
+    marginHorizontal: 0,
+    backgroundColor: "#fff"
+  },
+  itemContainer: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: '#ccc',
+    padding: 8,
+    position: 'relative',
+    backgroundColor: "#ffff",
+  },
 });
