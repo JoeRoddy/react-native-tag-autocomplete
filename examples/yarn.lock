@@ -3241,8 +3241,8 @@ locate-path@^2.0.0:
     path-exists "^3.0.0"
 
 lodash-es@^4.2.0, lodash-es@^4.2.1:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.14.tgz#12a95a963cc5955683cee3b74e85458954f37ecc"
 
 lodash._basecopy@^3.0.0:
   version "3.0.1"
@@ -4082,6 +4082,12 @@ react-devtools-core@2.3.1:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-autocomplete-input@^3.3.1:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-autocomplete-input/-/react-native-autocomplete-input-3.6.0.tgz#24d29d8c3e156a86771c1db0d58f2fa5611eee06"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-branch@2.0.0-beta.3:
   version "2.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.0.0-beta.3.tgz#2167af86bbc9f964bd45bd5f37684e5b54965e32"
@@ -4121,6 +4127,12 @@ react-native-svg@5.3.0:
   dependencies:
     color "^0.11.1"
     lodash "^4.16.6"
+
+react-native-tag-autocomplete@^1.0.12:
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/react-native-tag-autocomplete/-/react-native-tag-autocomplete-1.0.21.tgz#c6a5c39cfa95c8e0dd877c29f5ab7b3f777cbbfb"
+  dependencies:
+    react-native-autocomplete-input "^3.3.1"
 
 react-native-vector-icons@4.1.1:
   version "4.1.1"
@@ -5226,8 +5238,9 @@ webidl-conversions@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.1.tgz#8015a17ab83e7e1b311638486ace81da6ce206a0"
 
-"websql@github:expo/node-websql#18.0.0":
+websql@expo/node-websql#18.0.0:
   version "0.4.4"
+  uid e364fa65146a9e2157a19e5c719e7702c2b6b87a
   resolved "https://codeload.github.com/expo/node-websql/tar.gz/e364fa65146a9e2157a19e5c719e7702c2b6b87a"
   dependencies:
     argsarray "^0.0.1"
