@@ -123,7 +123,7 @@ export default class AutoTags extends Component {
           multiline={true}
           autoFocus={this.props.autoFocus === false ? false : true}
           renderItem={suggestion => (
-            <TouchableOpacity onPress={e => this.addTag(suggestion)}>
+            <TouchableOpacity onPress={e => this.addTag(suggestion)} style={{ paddingVertical: 8 }}>
               {this.props.renderSuggestion ? (
                 this.props.renderSuggestion(suggestion)
               ) : (
