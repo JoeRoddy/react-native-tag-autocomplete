@@ -13,8 +13,7 @@
     "react-native": "^0.46.1"
   },
   "dependencies": {
-    "react-native-autocomplete-input": "^3.3.1"    
+    "react-native-autocomplete-input": "^4.1.0"
   },
-  "peerDependencies": {
-  }
+  "peerDependencies": {}
 }
