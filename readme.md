@@ -9,6 +9,10 @@ Tag autocomplete component for contacts, groups, etc.
 ```shell
 $ npm install --save react-native-tag-autocomplete
 ```
+or
+```shell
+$ yarn add react-native-tag-autocomplete
+```
 
 ### Example
 
