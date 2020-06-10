@@ -114,6 +114,7 @@ export default class AutoTags extends Component {
           this.renderTags()}
         <Autocomplete
           data={data}
+          keyExtractor={(item, index) => index.toString()}
           controlled={true}
           placeholder={this.props.placeholder}
           defaultValue={query}
