@@ -127,7 +127,7 @@ export default class AutoTags extends Component {
               {this.props.renderSuggestion ? (
                 this.props.renderSuggestion(item)
               ) : (
-                <Text>{item.name}</Text>
+                <Text style={{ fontSize: 18.0,marginLeft:20.0 }}>{item.name}</Text>
               )}
             </TouchableOpacity>
           )}
