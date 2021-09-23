@@ -68,11 +68,11 @@ export default class AutoTags extends Component {
   };
 
   filterData = query => {
-    if (!query || query.trim() == "" || !this.props.suggestions) {
-      return;
-    }
     if (this.props.filterData) {
       return this.props.filterData(query);
+    }
+    if (!query || query.trim() == "" || !this.props.suggestions) {
+      return;
     }
     let suggestions = this.props.suggestions;
     let results = [];
