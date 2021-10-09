@@ -34,7 +34,7 @@ export default class AutoTags extends Component {
               <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                 <Text>{t.name}</Text>
                 <View style={{marginLeft:10.0}}>
-                  <Text style={{color:'red'}}>X</Text>
+                   <Text style={{color:'red'}}>X</Text>
                 </View>
               </View>
             </TouchableHighlight>
