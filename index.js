@@ -31,7 +31,10 @@ export default class AutoTags extends Component {
               style={[tagMargins, styles.tag]}
               onPress={() => this.props.handleDelete(i)}
             >
+              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
               <Text>{t.name}</Text>
+              <View style={{marginLeft:10.0}}><Text style={{color:'red'}}>X</Text></View>
+              </View>
             </TouchableHighlight>
           );
         })}
